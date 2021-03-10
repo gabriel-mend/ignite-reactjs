@@ -1,3 +1,7 @@
+<h1 align="center">
+    <img alt="Ignite ReactJS" title="Ignite ReactJS" src="./.github/ignite.png" />
+</h1>
+
 ## 💬  Sobre
 O Ignite é um treinamento da rocketseat que tem como objetivo evoluir devs para um próximo nível, utilizando das melhores práticas de projeto, 
 padrões e tecnologias para alavancar o dev para o mercado.
