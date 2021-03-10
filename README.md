@@ -5,7 +5,7 @@ padrões e tecnologias para alavancar o dev para o mercado.
 ## 🎯 Objetivo
 Bom essa trila é a de ReactJS, e o objetivo desse repositório é documentar todo meu progresso e códigos feitos nas aulas.
 
-## 📑  Contéudo das aulas
+## 📚  Contéudo das aulas
 ### Chapter 01: [Fundamentos do ReactJS](https://github.com/loadingGabriel/ignite-reactjs/tree/main/01-github-explore)
 
 * Configurando o Ambiente
