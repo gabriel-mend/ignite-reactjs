@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    // "incremental": true,                                                
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],                                   
+    "allowJs": true,                                              
+    "strict": true,                                 
+    "moduleResolution": "node", 
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",                                              
+    "allowSyntheticDefaultImports": true,        
+    "esModuleInterop": true,                                     
+    "skipLibCheck": true,                           
+    "forceConsistentCasingInFileNames": true        
+  },
+  "include": ["src"]
+}
