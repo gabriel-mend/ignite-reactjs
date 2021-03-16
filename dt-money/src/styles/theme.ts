@@ -14,11 +14,11 @@ export const light = {
 
 export const dark = {
   palette: {
-    title: "#363F5F",
+    title: "#FFFBFE",
     text: "#969CB3",
 
-    background: "#F0F2F5",
-    shape: "#FFFFFF",
+    background: "#232C33",
+    shape: "#3A4955",
 
     blue: "#5429CC",
     red: "#E62E4D",

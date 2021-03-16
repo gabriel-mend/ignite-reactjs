@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/global";
-import { light } from "./styles/theme/theme";
+import { light } from "./styles/theme";
 
 export function App() {
   return (

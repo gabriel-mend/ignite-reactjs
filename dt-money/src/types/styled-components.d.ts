@@ -1,4 +1,4 @@
-import { light } from '../styles/theme/theme'
+import { light } from '../styles/theme'
 // inferência de tipos
 type Theme = typeof light
 
