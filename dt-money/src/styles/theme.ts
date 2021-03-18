@@ -7,6 +7,7 @@ export const light = {
     shape: "#FFFFFF",
 
     blue: "#5429CC",
+    blueLight: "#6933FF",
     red: "#E62E4D",
     green: "#33CC95"
   }
@@ -21,6 +22,7 @@ export const dark = {
     shape: "#3A4955",
 
     blue: "#5429CC",
+    blueLight: "#6933FF",
     red: "#E62E4D",
     green: "#33CC95"
   }
