@@ -6,6 +6,7 @@ import { light } from "./styles/theme";
 import Modal from 'react-modal'
 import { useState } from "react";
 import { NewTransactionModal } from "./components/NewTransactionModal";
+import { TransactionsProvider } from "./hooks/useTransactions";
 
 Modal.setAppElement('#root')
 
@@ -22,7 +23,7 @@ export function App() {
   
   return (
     <ThemeProvider theme={light}>
-      <>
+      <TransactionsProvider>
         <Header 
           onOpenNewTransactionModal={handleOpenNewTransactionModal}
         />
@@ -32,7 +33,7 @@ export function App() {
           onRequestClose={handleCloseNewTransactionModal}
         />
         <GlobalStyles />
-      </>
+      </TransactionsProvider>
     </ThemeProvider>
   );
 }
