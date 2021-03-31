@@ -1,4 +1,7 @@
-import { light } from '../styles/theme'
+import { useThemeSwitcher } from '../hooks/useThemeSwitcher'
+import { light, dark } from '../styles/theme'
+const { theme } = useThemeSwitcher()
+
 // inferência de tipos
 type Theme = typeof light
 
