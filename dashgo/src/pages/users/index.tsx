@@ -4,15 +4,18 @@ import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
-import { useUsers } from "../../services/hooks/useUsers";
+import { getUsers, useUsers } from "../../services/hooks/useUsers";
 import { queryClient } from "../../services/queryClient";
 import { api } from "../../services/api";
+import { GetServerSideProps } from "next";
 
 
-export default function UserList () {
+export default function UserList ({ users, totalCount }) {
   const [page, setPage] = useState(1)
 
-  const { data, isLoading, isFetching, error } = useUsers(page)
+  const { data, isLoading, isFetching, error } = useUsers(page, {
+    initialData: { users, totalCount }
+  })
 
   async function handlePrefecthUser(id: number) {
     await queryClient.prefetchQuery(['user', id], async () => {
@@ -116,4 +119,15 @@ export default function UserList () {
       </Flex>
     </Box>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { users, totalCount } = await getUsers(1)
+
+  return {
+    props: {
+      users,
+      totalCount
+    }
+  }
 }
