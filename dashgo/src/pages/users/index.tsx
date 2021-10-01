@@ -1,16 +1,28 @@
-import { Box, Button, Checkbox, Flex, Heading, Icon, Spinner, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Button, Checkbox, Flex, Heading, Icon, Spinner, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue, Link } from "@chakra-ui/react";
 import { RiAddLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import { useUsers } from "../../services/hooks/useUsers";
+import { queryClient } from "../../services/queryClient";
+import { api } from "../../services/api";
+
 
 export default function UserList () {
   const [page, setPage] = useState(1)
 
   const { data, isLoading, isFetching, error } = useUsers(page)
+
+  async function handlePrefecthUser(id: number) {
+    await queryClient.prefetchQuery(['user', id], async () => {
+      const response = await api.get(`/users/${id}`)
+
+      return response.data
+    }, {
+      staleTime: 1000 * 60 * 10
+    })
+  }
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -82,7 +94,9 @@ export default function UserList () {
                       </Td>
                       <Td>
                         <Box>
-                          <Text fontWeight="bold">{user.name}</Text>
+                          <Link color="purple.400" onMouseEnter={() => handlePrefecthUser(Number(user.id))}>
+                            <Text fontWeight="bold">{user.name}</Text>
+                          </Link>
                           <Text fontSize="sm" color="gray.300">{user.email}</Text>
                         </Box>
                       </Td>
