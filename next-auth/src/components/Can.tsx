@@ -11,7 +11,6 @@ export function Can({ children, permissions, roles }: CanProps) {
   const useCanSeeComponent = useCan({
     permissions,
     roles
-    
   })
 
   if(!useCanSeeComponent) {
