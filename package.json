@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "ts-jest": "^27.1.3"
+  }
+}
