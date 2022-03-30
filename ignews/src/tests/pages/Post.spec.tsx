@@ -43,7 +43,7 @@ describe('Post page', () => {
   it('loads initial data', async () => {
     const getSessionMocked = mocked(getSession)
     const getPrismicClientMocked = mocked(getPrismicClient)
-
+    //Return e no caso de 
     getPrismicClientMocked.mockReturnValueOnce({
       getByUID: jest.fn().mockResolvedValueOnce({
         data: {
@@ -57,7 +57,7 @@ describe('Post page', () => {
         },
       })
     } as any)
-
+    // Resolved e no caso de uma promise
     getSessionMocked.mockResolvedValueOnce({
       activeSubscription: 'fake-active-subscription'
     } as any)
