@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react"
-import { Async } from "./index"
+import {   } from "./index"
 
 describe('it renders correctly', async () => {
   render(<Async />)
